@@ -253,7 +253,6 @@
     * [编译spark](大数据/Spark/编译spark.md)
   * [HIVE和HBASE区别](大数据/HIVE和HBASE区别.md)
   * [zookeeper](大数据/zookeeper.md)
-* [日常笔记](日常笔记.md)
 * [Python](Python.md)
   * [Django](Python/Django.md)
   * [Anaconda](Python/Anaconda.md)
