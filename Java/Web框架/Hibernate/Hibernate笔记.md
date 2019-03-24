@@ -1,0 +1,266 @@
+
+1.	Hibernate基本技术
+Hibernate工作原理
+		 ![](../images/screenshot_1530425595574.png)
+	第一个Hibernate程序
+		id用Integer类型
+		*.hbm.xml:
+			 ![](../images/screenshot_1530425600990.png)
+		hibernate.cfg.xml:
+			 
+				  ![](../images/screenshot_1530425605591.png)
+				 ![](../images/screenshot_1530425613848.png)
+                 ![](../images/screenshot_1530425617976.png)
+		定义测试类:
+			 ![](../images/screenshot_1530425623166.png)
+		定义Hibernate工具类
+			 ![](../images/screenshot_1530425629052.png)
+	CRUD操作
+		persist(通常不用)
+			 ![](../images/screenshot_1530425635135.png)
+		delete
+			 ![](../images/screenshot_1530425638045.png)
+		update
+			 ![](../images/screenshot_1530425640963.png)
+		saveOrUpdate
+			 ![](../images/screenshot_1530425644850.png)
+		get与load
+			 ![](../images/screenshot_1530425650059.png)
+			 ![](../images/screenshot_1530425655319.png)
+			若要查询的对象不存在,get返回null,load抛出异常
+		增删改的底层执行顺序
+			 
+			 
+增加刷新点后,会马上执行
+	详解API
+		Configure接口
+			Hibernate主配置文件名称的修改
+			 ![](../images/screenshot_1530425674277.png)
+ ![](../images/screenshot_1530425677115.png)
+		SessionFactory接口
+		Session接口
+			 ![](../images/screenshot_1530425682198.png)
+			 ![](../images/screenshot_1530425685256.png)
+			 ![](../images/screenshot_1530425689256.png)
+		Transaction接口
+			 ![](../images/screenshot_1530425693953.png)
+	主配置文件详解
+		hibernate.properties文件
+ ![](../images/screenshot_1530425699185.png)
+替换hibernate.cfg.xml文件中相关属性
+ ![](../images/screenshot_1530425703721.png)
+		C3P0数据源不用没有异常,但一定要用
+	映射文件详解
+		一个映射文件中注册多个实体类
+			 ![](../images/screenshot_1530425709326.png)
+			也可以写成多个映射文件
+		表名与字段名的默认名称映射方法
+			 ![](../images/screenshot_1530425714268.png)
+		Hibernate内置主键生成策略
+			increment    Hibernate自己在维护主键的值
+			identity		 使用数据库自身的自增长来维护主键值
+				 ![](../images/screenshot_1530425770935.png)
+			sequence		默认情况下,mysql不支持.
+			native		 ![](../images/screenshot_1530425778237.png)
+			assigned(了解)
+				 ![](../images/screenshot_1530425782115.png)
+			uuid(重要)
+				 ![](../images/screenshot_1530425787034.png)
+	持久对象状态管理
+		 ![](../images/screenshot_1530425791307.png)
+		状态转化图:
+		 ![](../images/screenshot_1530425794380.png)
+2.	单表查询
+API
+		Qurey接口
+			 ![](../images/screenshot_1530425799333.png)
+		SQLQuery接口
+			 ![](../images/screenshot_1530425802326.png)
+			 ![](../images/screenshot_1530425805033.png)
+		Criteria接口
+			 ![](../images/screenshot_1530425808169.png)
+	分类查询
+		查询所有
+			 ![](../images/screenshot_1530425812113.png)
+			 ![](../images/screenshot_1530425815105.png)
+			 ![](../images/screenshot_1530425820224.png)
+		查询结果排序
+			 ![](../images/screenshot_1530425823684.png)
+			 ![](../images/screenshot_1530425828426.png)
+			 ![](../images/screenshot_1530425831911.png)
+		动态参数绑定查询
+			 ![](../images/screenshot_1530425844540.png)
+			 ![](../images/screenshot_1530425847285.png)
+			 ![](../images/screenshot_1530425852433.png)
+			 ![](../images/screenshot_1530425856261.png)
+		分页查询
+			 ![](../images/screenshot_1530425859966.png)
+			 ![](../images/screenshot_1530425863106.png)
+		模糊查询
+			 ![](../images/screenshot_1530425866827.png)
+		唯一性查询
+			 ![](../images/screenshot_1530425869828.png)
+		聚合函数查询
+			 ![](../images/screenshot_1530425872996.png)
+		投影查询
+			 ![](../images/screenshot_1530425876911.png)
+		分组查询
+			 ![](../images/screenshot_1530425881006.png)
+		iterate()方法产生的N+1问题
+			 ![](../images/screenshot_1530425887783.png)
+			第二次查询可以读缓存
+		list()方法的利于弊
+			一次搞定,但不能读缓存
+		N+1问题的解决
+			 ![](../images/screenshot_1530425892339.png)
+		命名查询
+			 ![](../images/screenshot_1530425903794.png)(映射文件中)
+			 ![](../images/screenshot_1530425900298.png)
+3.	关联关系映射(重点内容)
+关系映射
+一对多单向关联
+		 ![](../images/screenshot_1530425911110.png)
+	一对多双向关联
+		 ![](../images/screenshot_1530425914963.png)
+		 ![](../images/screenshot_1530425918750.png)
+		 ![](../images/screenshot_1530425923274.png)
+自关联
+		 ![](../images/screenshot_1530425927108.png)
+多对一单向关联
+多对多单向关联
+		 ![](../images/screenshot_1530425934686.png)
+多对多双向关联
+级联删除
+		慎用cascade=all   会清空数据库数据
+		cascade=delete
+		cascade=delete-orphan
+Hibernate对于左外连接的实现
+		 ![](../images/screenshot_1530425941117.png)
+		Hibernate对于迫切左外连接的实现
+		 ![](../images/screenshot_1530425944789.png)
+4.	Hibernate检索优化
+当前对象检索优化
+关联对象检索优化
+		多端加载优化
+			 ![](../images/screenshot_1530425949984.png)
+			 ![](../images/screenshot_1530425955527.png)
+			fecth=join   延迟加载失效
+			fetch=select,lazy=false
+			fetch=select,lazy=true
+			fetch=select,lazy=extra
+			fectch=subselect(了解)
+		单端加载优化
+			 ![](../images/screenshot_1530425962493.png)
+			 ![](../images/screenshot_1530425965907.png)
+			fetch=join
+			fetch=select,lazy=false
+			fetch=select,lazy=proxy,lazy=true
+			fetch=select,lazy=proxy,lazy=false
+5.	Hibernate缓存机制
+缓存范围分类
+		事务范围缓存
+			 ![](../images/screenshot_1530425977815.png)
+		应用范围缓存
+			 ![](../images/screenshot_1530425980502.png)
+		集群范围缓存
+			 ![](../images/screenshot_1530425983048.png)
+一级缓存
+		 ![](../images/screenshot_1530425986194.png)
+快照
+		 ![](../images/screenshot_1530425990454.png)
+		Session的刷新与同步
+			 ![](../images/screenshot_1530425995357.png)
+			 ![](../images/screenshot_1530425999489.png)
+		修改刷新模式:
+			 
+			 ![](../images/screenshot_1530426003708.png)
+             ![](../images/screenshot_1530426007913.png)
+二级缓存(重点内容)
+		 ![](../images/screenshot_1530426012204.png)
+		二级缓存内容分类
+			 ![](../images/screenshot_1530426016943.png)
+		二级缓存的并发访问策略
+			 ![](../images/screenshot_1530426020361.png)
+		第三方插件EHCache用法
+			导入jar包
+				 ![](../images/screenshot_1530426024443.png)
+			修改主配置文件
+				 ![](../images/screenshot_1530426027363.png)
+			添加ehcache.xml文件
+			指定缓存内容
+				 ![](../images/screenshot_1530426030964.png)
+				 ![](../images/screenshot_1530426034378.png)
+				或者在主配置文件中配置:
+				 ![](../images/screenshot_1530426037650.png)
+		二级缓存的存在性证明
+		二级缓存中的对象与一级缓存中的对象是不相同的
+		类缓存中存放的是缓存对象的详情,集合缓存中存放的是所有集合元素的id.
+		证明Query查询的结果也会放到一二缓存中
+		证明Query查询默认不会从一、二缓存中读取数据
+		Query缓存的使用
+			 ![](../images/screenshot_1530426043947.png)
+			 ![](../images/screenshot_1530426047100.png)
+		证明Query查询必须保证Query所执行的HQL语句完全相同
+		绕过一级缓存的修改
+			 ![](../images/screenshot_1530426050994.png)
+			没有绕过二级缓存
+			从二级缓存中读取数据首先要判断updateTimeStamp值是否被修改
+6.	事务相关内容
+读并发问题
+		脏读
+			 ![](../images/screenshot_1530426058124.png)
+		不可重复读
+			 ![](../images/screenshot_1530426061847.png)
+		幻读
+			 ![](../images/screenshot_1530426065066.png)
+事务的隔离级别
+		 ![](../images/screenshot_1530426091563.png)读
+写并发问题
+		第一类丢失更新
+			 ![](../images/screenshot_1530426094823.png)
+		第二类丢失更新
+			 ![](../images/screenshot_1530426099530.png)
+			 ![](../images/screenshot_1530426103330.png)
+加锁机制
+		 ![](../images/screenshot_1530426107457.png)
+		乐观锁
+			 ![](../images/screenshot_1530426111627.png)
+		悲观锁
+			 ![](../images/screenshot_1530426133737.png)
+Hibernate并发问题解决
+		设置Hibernate事务隔离级别
+			 ![](../images/screenshot_1530426136712.png)
+		Hibernate通过版本号实现乐观锁
+			 ![](../images/screenshot_1530426139407.png)
+Hibernate中添加悲观锁
+	写锁(排他锁)
+		 ![](../images/screenshot_1530426142794.png)
+			读锁
+				 ![](../images/screenshot_1530426146913.png)
+7.	Hibernate注解式开发
+ ![](../images/screenshot_1530426161854.png)
+Hibernate直接使用了JPA的这套注解.
+ ![](../images/screenshot_1530426165443.png)
+Hibernate基本注解
+类级注解
+		 ![](../images/screenshot_1530426170213.png)
+使用Hibernate内置主键生成策略
+	 ![](../images/screenshot_1530426174578.png)
+	关联关系注解
+		一对多双向关联
+			 ![](../images/screenshot_1530426177890.png)
+			 ![](../images/screenshot_1530426181036.png)
+		一对多双向关联,一方放弃维护权
+			 ![](../images/screenshot_1530426184960.png)
+		自关联
+			 ![](../images/screenshot_1530426187906.png)
+		多对多双向关联
+			 ![](../images/screenshot_1530426191324.png)
+			 ![](../images/screenshot_1530426195533.png)
+	二级缓存注解@Cache  
+		 ![](../images/screenshot_1530426199053.png)
+			类缓存
+			 ![](../images/screenshot_1530426201706.png)
+			集合缓存
+			 ![](../images/screenshot_1530426204637.png)
+			Query缓存没有注解
