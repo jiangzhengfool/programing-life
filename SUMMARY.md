@@ -5,6 +5,8 @@
   * [Java SE](Java/JavaSE.md)
     * [基本语法](Java/JavaSE/基本语法.md)
       * [程序编译和运行的过程](Java/JavaSE/基本语法/程序编译和运行的过程.md)
+      * [Java命令](Java/JavaSE/基本语法/javaming-ling.md)
+      * [关键字](Java/JavaSE/基本语法/guan-jian-zi.md)
     * [面向对象编程](Java/JavaSE/面向对象编程.md)
     * [异常](Java/JavaSE/异常.md)
     * [常用类](Java/JavaSE/常用类.md)
