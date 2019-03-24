@@ -72,7 +72,6 @@
   * [微服务](Java/微服务.md)
     * [SOA面向服务架构——SOA的概念](Java/微服务/SOA面向服务架构——SOA的概念.md)
     * [为什么微服务一定要有网关？](Java/微服务/为什么微服务一定要有网关？.md)
-    * [Dubbo](Dubbo.md)
     * [Spring Cloud](SpringCloud.md)
     * [Docker](Docker.md)
     * [Kuberante](Kuberante.md)
