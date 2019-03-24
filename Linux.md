@@ -1,16 +1,25 @@
 # Linux的系统机构
+
 # 虚拟网络的配置(4种)
+
 # Linux常用命令
 ### [Linux命令大全](http://man.linuxde.net/)
 ### [linux常用命令](https://www.jianguoyun.com/p/DcXCOnIQkJSpBhjYmC8)
 ### [Linux常用命令详解](https://www.jianguoyun.com/p/DdGm1PEQkJSpBhjcmC8)
 ### [Linux命令大全完整版](https://www.jianguoyun.com/p/DcqDlMUQkJSpBhjdmC8)
+
 # 远程登录的方式及其区别
+
 # Linux的目录结构
+
 # 用户和用户组的管理
+
 # 文件的权限管理
+
 # 标准的输入和输出
+
 # 管道
+
 # DNS解析
 
 # 重要软件
