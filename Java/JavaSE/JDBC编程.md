@@ -1,0 +1,39 @@
+JDBC、DBUtils、DBCP连接池  
+#### JDBC开发
+- 过程及涉及到的主要类
+- DriverManager
+- 常用数据库URL地址的写法：
+- connection的常用方法：
+- Statement
+- ResultSet
+- 释放资源
+- [常用数据类型转换表](http://i.imgur.com/nDTXBrx.png)
+- 数据库分页
+- 使用JDBC处理大数据
+- 使用JDBC进行批处理
+- 获得数据库自动生成的主键
+- [JDBC调用存储过程](http://i.imgur.com/tmsKolX.png)
+- 事务的特性(ACID)
+- 事务的隔离级别
+- 事务隔离性的设置语句
+- [Java中数据库连接池原理机制的详细讲解](https://www.jianguoyun.com/p/DbcvXE4QkJSpBhjtpi0)
+- [编写一个基本的连接池实现连接复用](http://i.imgur.com/6JOss8c.png)
+- [使用动态代理技术构建连接池中的connection](http://i.imgur.com/ivVdMCq.png)
+- DBCP数据源
+- [使用DBCP的代码示例](http://i.imgur.com/2qIkNGH.png)
+- [DBCP配置](https://www.jianguoyun.com/p/DRokMmEQkJSpBhj4pi0)
+- [C3P0 数据源](http://i.imgur.com/oIwvtmY.png)
+- [配置Tomcat数据源](http://i.imgur.com/ux3k5SS.png)
+- JNDI技术
+- 元数据－ DataBaseMetaData
+- 元数据－ ParameterMetaData
+- 元数据－ ResultSetMetaData
+- 使用元数据简化JDBC代码
+- O-R Mapping简介
+- commons-dbutils
+- DbUtils类
+- QueryRunner类的主要方法
+- ResultSetHandler接口
+- ResultSetHandler 接口的实现类
+- Dao跨事务调用
+- 使用Jdbc操作多个表
