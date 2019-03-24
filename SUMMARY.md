@@ -310,4 +310,8 @@
     * [修炼之道](书籍网站软件/推荐书籍/修炼之道.md)
 * [IOT](IOT.md)
   * [nats](IOT/nats.md)
+* [笔记](bi-ji.md)
+  * [读书笔记](bi-ji/du-shu-bi-ji.md)
+    * Java工程师修炼之道
+  * [日常笔记](bi-ji/ri-chang-bi-ji.md)
 
