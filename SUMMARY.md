@@ -225,8 +225,6 @@
   * [爬虫](其他/爬虫.md)
     * [HtmlUnit](其他/爬虫/HtmlUnit.md)
   * [record](其他/record.md)
-  * [登录](登录.md)
-    * [二维码登录](二维码登录.md)
 * [nodeJs](nodeJs.md)
   * [ECMAScript 6](nodeJs/ECMAScript6.md)
 * [大数据](大数据.md)
